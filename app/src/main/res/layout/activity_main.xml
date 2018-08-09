@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_image"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity"
+    android:clipToPadding="false">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/ic_button_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        android:text="Gallery"
+        android:id="@+id/galleryBtn"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textColor="#642626"
+        android:alpha="0.95"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/ic_button_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        android:text="Questionnaire"
+        android:id="@+id/questionnaireBtn"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:alpha="0.95"
+        android:textColor="#642626"
+        android:textStyle="bold"
+        android:paddingTop="10dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:paddingBottom="10dp"
+        android:gravity="center"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_oval"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        android:alpha="0.2"
+        android:elevation="8dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:id="@+id/pointsBtn"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100"
+        app:layout_constraintStart_toStartOf="@id/pointsBtn"
+        app:layout_constraintEnd_toEndOf="@id/pointsBtn"
+        app:layout_constraintTop_toTopOf="@id/pointsBtn"
+        android:elevation="8dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:alpha="0.6"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@id/pointsBtn"/>
+
+
+</android.support.constraint.ConstraintLayout>
