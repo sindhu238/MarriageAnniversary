@@ -77,11 +77,12 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/sf_medium"
-            android:gravity="center"
             android:maxLines="5"
-            android:text="Your question comes here with some dta  sdbvvds jhdsgfdshg sdhgfjsdhfgshfd"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Your question comes "
             android:textColor="@color/black"
-            android:textSize="14sp"
+            android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@id/questionnaireTV" />
 
 
@@ -108,7 +109,7 @@
         android:layout_marginEnd="20dp"
         android:elevation="16dp"
         android:fontFamily="@font/sf_semibold"
-        android:padding="20dp"
+        android:padding="12dp"
         android:text="GET STARTED"
         android:textColor="@color/black"
         android:textSize="15sp"

@@ -24,6 +24,16 @@ public class QuestionnaireActivity extends AppCompatActivity implements View.OnC
     boolean isQuestionsPresented = false;
     Guideline guideline;
     TextView points;
+    TextView queryTV;
+
+    String[] questions = {"How creative is your partner"
+            , "How good is your partners cooking skills"
+            , "How do you rate your happiness when you are with your partner"
+            , "How clumsy or confusing is your partner"
+            , "How loud is your partner"
+            , "Last but not least, how do you feel about your relationship"};
+    int questionCount = 0;
+    int finalCount = 0;
 
     @Override
     protected void onCreate( @Nullable Bundle savedInstanceState ) {
@@ -35,6 +45,7 @@ public class QuestionnaireActivity extends AppCompatActivity implements View.OnC
         nextTV = findViewById(R.id.getStartedTV);
         guideline = findViewById(R.id.guideline2);
         points = findViewById(R.id.points);
+        queryTV = findViewById(R.id.query);
 
         ImageView backBtn = findViewById(R.id.backBtn);
         nextTV.setOnClickListener(this);
@@ -56,8 +67,13 @@ public class QuestionnaireActivity extends AppCompatActivity implements View.OnC
                     questionnaireLyout.startAnimation(alphaAnimation);
                     isQuestionsPresented = true;
                 } else {
+
                     queryLayout.startAnimation(alphaAnimation);
+
+
                 }
+
+
 
                 alphaAnimation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
@@ -78,10 +94,14 @@ public class QuestionnaireActivity extends AppCompatActivity implements View.OnC
                             @Override
                             public void onAnimationStart(Animation animation) {
                                 queryLayout.setAlpha(1);
+                                if (questions.length > questionCount) {
+                                    presentNextQuestion();
+                                }
                             }
 
                             @Override
                             public void onAnimationEnd(Animation animation) {
+
 
                             }
 
@@ -108,6 +128,18 @@ public class QuestionnaireActivity extends AppCompatActivity implements View.OnC
          }
     }
 
+    private void presentNextQuestion() {
+
+        points.setText("0");
+        queryTV.setText(questions[questionCount]);
+        questionCount ++;
+
+        if (questionCount == questions.length) {
+            nextTV.setText("Submit");
+        }
+
+
+    }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -134,8 +166,6 @@ public class QuestionnaireActivity extends AppCompatActivity implements View.OnC
                 default:
                     break;
         }
-
-
 
         return super.onTouchEvent(event);
     }
