@@ -12,6 +12,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 /**
  * Created by srisindhu.pydimukkal on 13/08/2018.
  */
@@ -33,7 +36,7 @@ public class QuestionnaireActivity extends AppCompatActivity implements View.OnC
             , "How loud is your partner"
             , "Last but not least, how do you feel about your relationship"};
     int questionCount = 0;
-    int finalCount = 0;
+    int finalCount = 10;
 
     @Override
     protected void onCreate( @Nullable Bundle savedInstanceState ) {
@@ -136,6 +139,9 @@ public class QuestionnaireActivity extends AppCompatActivity implements View.OnC
 
         if (questionCount == questions.length) {
             nextTV.setText("Submit");
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference reference = database.getReference();
+            reference.child("She").setValue("250");
         }
 
 
